@@ -1,5 +1,5 @@
 import React from 'react';
-import ScoreCounter from './score-counter';
+import CounterComponent from './counter-component';
 
 export default class Root extends React.Component {
     constructor(props) {
@@ -9,8 +9,7 @@ export default class Root extends React.Component {
     render() {
         return (
             <div>
-                <div>My app woo!</div>
-                <ScoreCounter />
+                <CounterComponent />
             </div>
         );
     }
