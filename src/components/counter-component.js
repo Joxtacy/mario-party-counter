@@ -9,7 +9,7 @@ class CounterComponent extends React.Component {
             score: 0
         };
         this.increaseByOne = this.increaseByOne.bind(this);
-        this.reduceByOne = this.reduceByOne.bind(this);
+        this.decreaseByOne = this.decreaseByOne.bind(this);
     }
 
     increaseByOne() {
@@ -19,17 +19,18 @@ class CounterComponent extends React.Component {
         });
     }
 
-    reduceByOne() {
+    decreaseByOne() {
         const oldScore = this.state.score;
+        const newScore = oldScore - 1 > 0 ? oldScore - 1 : 0;
         this.setState({
-            score: oldScore - 1
+            score: newScore
         });
     }
 
     render() {
         return (
             <div>
-                <ScoreCounter onClick={ this.reduceByOne } buttonLabel='-'/>
+                <ScoreCounter onClick={ this.decreaseByOne } buttonLabel='-'/>
                 <LabelComponent label={ this.state.score } />
                 <ScoreCounter onClick={ this.increaseByOne } buttonLabel='+'/>
             </div>
